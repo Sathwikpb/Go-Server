@@ -25,3 +25,11 @@ Usage:
 - Start the server by running the main function.
 - Access the "/hello" endpoint via a web browser or HTTP client to receive the "hello" message.
 - Access the "/form" endpoint with a POST request containing form data to see the submitted data.
+
+Files:
+1. Static file
+   - index.html
+   - form.html
+   - style.css
+   - script.js
+2. main.go
