@@ -20,15 +20,26 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/hello" {
-		http.Error(w, "404 not found ", http.StatusNotFound)
-		return
+	// if r.URL.Path != "/hello" {
+	// 	http.Error(w, "404 not found ", http.StatusNotFound)
+	// 	return
+	// }
+	// if r.Method != "GET" {
+	// 	http.Error(w, "method not supported", http.StatusNotFound)
+	// 	return
+	// }
+	// fmt.Fprintf(w, "hello")
+// Alternative method for path request 
+	switch r.URL.Path {
+	case "/hello":
+		if r.Method != http.MethodGet {
+			http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
+			return
+		}
+		fmt.Fprint(w, "hello")
+	default:
+		http.NotFound(w, r)
 	}
-	if r.Method != "GET" {
-		http.Error(w, "method not supported", http.StatusNotFound)
-		return
-	}
-	fmt.Fprintf(w, "hello")
 
 }
 
