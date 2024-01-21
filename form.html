@@ -1,23 +1,35 @@
+<!-- static/index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
-    <form method="post" action="/form">
-        <label >name
-            <input name="name" type="text" value=""/>
-        </label>
-        <label >address 
-            <input name ="address" type="text" value=""/>
-        </label>
-        <input type="submit" value="submit"/>
-    </form>
-
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/form">Form</a></li>
+                <li><a href="/hello">Hello</a></li>
+            </ul>
+        </nav>
+        
+        <h1>Welcome to the Form Page</h1>
+        
+        <form method="post" action="/form" class="center">
+            <label>Name
+                <input name="name" type="text" value=""/>
+            </label>
+            <label>Address 
+                <input name="address" type="text" value=""/>
+            </label>
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
 </body>
-
 </html>
